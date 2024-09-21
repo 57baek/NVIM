@@ -10,7 +10,7 @@ return {
 			mapKey("<leader>gs", vim.cmd.Git)
 
 			-- Git push
-			mapKey("<leader>gp", ":Git push<CR>")
+			mapKey("<leader>gp", ":Git push origin main<CR>")
 
 			-- Git pull
 			mapKey("<leader>gl", ":Git pull<CR>")
@@ -28,7 +28,13 @@ return {
 			mapKey("<leader>gA", ":Git add .<CR>")
 
 			-- Git commit (opens commit message buffer)
-			mapKey("<leader>gc", ":Git commit<CR>")
+			mapKey("<leader>gc", function()
+				vim.ui.input({ prompt = "Commit message: " }, function(msg)
+					if msg then
+						vim.cmd(string.format('Git commit -m "%s"', msg))
+					end
+				end)
+			end)
 
 			-- Git add all and commit (with prompt for commit message)
 			mapKey("<leader>gac", function()
