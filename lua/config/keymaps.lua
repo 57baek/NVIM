@@ -12,13 +12,14 @@ mapKey('<C-l>', '<C-w>l') -- right
 mapKey('<C-k>', '<C-w>k') -- up
 mapKey('<C-j>', '<C-w>j') -- down
 
--- clear search highlights
+-- clear search highlights when using /
 mapKey('<leader>h', ':nohlsearch<CR>')
 
 -- back to the nvim lobby menu
 mapKey('<leader>w', ':Ex<CR>')
 
 -- fuzzyfinder
-mapKey('','::<CR>')
+mapKey('<leader>ff',':Telescope find_files<CR>')
 
 -- live grep
+mapKey('<leader>fg',':Telescope find_files<CR>')
