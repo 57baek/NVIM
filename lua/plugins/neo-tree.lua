@@ -1,25 +1,38 @@
 return {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-        "MunifTanjim/nui.nvim",
-        -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    },
-    config = function()
-        require("neo-tree").setup({
-            close_if_last_window = true, -- Close Neo-tree if it’s the last window
-            popup_border_style = "rounded", -- Use rounded borders for the popup
-            window = {
-                width = 30, -- Adjust this value to change the width
-                height = 15, -- Adjust this value to change the height
-                -- auto_expand_width = true; -- expand the window when file exceeds the window width. does not work with position = "float"
-                mappings = {
-                    -- Your mappings here
-                },
-            },
-            -- Additional configurations...
-        })
-    end,
+	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
+	},
+	config = function()
+		-- Neo-tree setup
+		require("neo-tree").setup({
+			close_if_last_window = true,
+			popup_border_style = "rounded",
+			window = {
+				postion = "left",
+				width = 30,
+				mappings = {
+					-- Your mappings here
+				},
+			},
+		})
+
+		-- Custom function to change Neo-tree width
+		_G.change_neotree_width = function(delta)
+			-- Get the window ID for Neo-tree
+			local win_id = vim.fn.bufwinid("neo-tree")
+			if win_id ~= -1 then
+				vim.api.nvim_win_set_width(win_id, vim.api.nvim_win_get_width(win_id) + delta)
+			end
+		end
+
+		-- Check if current window is Neo-tree
+		_G.is_neotree_window = function()
+			local bufname = vim.api.nvim_buf_get_name(0)
+			return bufname:match("neo%-tree") ~= nil
+		end
+	end,
 }

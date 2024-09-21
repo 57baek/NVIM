@@ -1,16 +1,30 @@
 -- Keymap Settings
 -- <CR> = ENTER
 
+-- Keymap Settings
 local mapKey = require("utils.keyMapper").mapKey
 
--- neotree toggle
+-- Map <leader>e to toggle
 mapKey("<leader>e", ":Neotree toggle<CR>")
 
+-- Neo-tree width adjustment keymaps
+mapKey("<C-=>", function()
+	if _G.is_neotree_window() then
+		_G.change_neotree_width(3)
+	end
+end)
+
+mapKey("<C-->", function()
+	if _G.is_neotree_window() then
+		_G.change_neotree_width(-3)
+	end
+end)
+
 -- pane navigation
-mapKey("<C-h>", "<C-w>h") -- left
-mapKey("<C-l>", "<C-w>l") -- right
-mapKey("<C-k>", "<C-w>k") -- up
-mapKey("<C-j>", "<C-w>j") -- down
+mapKey("<leader><Left>", "<C-w>h") -- left
+mapKey("<leader><Right>", "<C-w>l") -- right
+mapKey("<leader><Up>", "<C-w>k") -- up
+mapKey("<leader><Down>", "<C-w>j") -- down
 
 -- clear search highlights when using /
 mapKey("<leader>h", ":nohlsearch<CR>")
@@ -31,3 +45,5 @@ mapKey("<leader>fg", ":Telescope git_files<CR>")
 mapKey("<", "<gv", "v")
 mapKey(">", ">gv", "v")
 
+--- run current python file with leader+r
+mapKey("<leader>r", ":w<CR>:!python3 %<CR>")
