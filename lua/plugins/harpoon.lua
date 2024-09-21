@@ -15,7 +15,7 @@ return {
 			local mapKey = require("utils.keyMapper").mapKey
 
 			mapKey("<leader>a", function()
-				harpoon:list():append()
+				harpoon:list():add()
 			end)
 			mapKey("<leader>s", function()
 				harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -47,14 +47,6 @@ return {
 			end)
 			mapKey("<leader>9", function()
 				harpoon:list():select(9)
-			end)
-
-			-- Toggle previous & next buffers stored within Harpoon list
-			mapKey("<leader>q", function()
-				harpoon:list():prev()
-			end)
-			mapKey("<leader>w", function()
-				harpoon:list():next()
 			end)
 		end,
 	},
