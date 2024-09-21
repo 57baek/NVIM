@@ -18,8 +18,15 @@ mapKey('<leader>h', ':nohlsearch<CR>')
 -- back to the nvim lobby menu
 mapKey('<leader>w', ':Ex<CR>')
 
--- fuzzyfinder
+-- fuzzy finder
 mapKey('<leader>ff',':Telescope find_files<CR>')
 
--- live grep
-mapKey('<leader>fg',':Telescope find_files<CR>')
+-- live grep finder
+mapKey('<leader>fd',':Telescope live_grep<CR>')
+
+-- git file finder
+mapKey('<leader>fg',':Telescope git_files<CR>')
+
+-- indentation
+mapKey('<','<gv','v')
+mapKey('>','>gv','v')
