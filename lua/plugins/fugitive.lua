@@ -7,7 +7,7 @@ return {
 			local mapKey = require("utils.keyMapper").mapKey
 
 			-- Open Git status
-			mapKey("<leader>gs", vim.cmd.Git)
+			mapKey("<leader>gs", ":Git<CR>")
 
 			-- Git push
 			mapKey("<leader>gp", ":Git push origin main<CR>")
