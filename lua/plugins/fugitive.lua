@@ -6,7 +6,7 @@ return {
 			-- Set up keymaps
 			local mapKey = require("utils.keyMapper").mapKey
 
-			-- Open Git status
+			-- -- Open Git status
 			mapKey("<leader>gs", ":Git<CR>")
 
 			-- Open Git log
