@@ -9,11 +9,14 @@ return {
 			-- Open Git status
 			mapKey("<leader>gs", ":Git<CR>")
 
+			-- Open Git log
+			mapKey("<leader>gl", ":Git log<CR>")
+
 			-- Git push
 			mapKey("<leader>gp", ":Git push origin main<CR>")
 
 			-- Git pull
-			mapKey("<leader>gl", ":Git pull<CR>")
+			mapKey("<leader>gpl", ":Git pull<CR>")
 
 			-- Git diff
 			mapKey("<leader>gd", ":Gdiff<CR>")
