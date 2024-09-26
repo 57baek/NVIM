@@ -40,9 +40,6 @@ mapKey("<leader>ff", ":Telescope find_files<CR>")
 -- live grep finder
 mapKey("<leader>fd", ":Telescope live_grep<CR>")
 
--- git file finder
-mapKey("<leader>fg", ":Telescope git_files<CR>")
-
 -- indentation
 mapKey("<", "<gv", "v")
 mapKey(">", ">gv", "v")
@@ -63,3 +60,24 @@ end
 vim.api.nvim_create_user_command("RunPythonInIPython", RunPythonInIPython, {})
 -- Key mapping to run the current Python file in IPython
 vim.api.nvim_set_keymap("n", "<leader>re", ":RunPythonInIPython<CR>", { noremap = true, silent = true })
+
+-- Add the faster.nvim mappings
+-- Normal mode: Faster movement for j and k
+mapKey("j", "<Plug>(faster_move_j)", "n")
+mapKey("k", "<Plug>(faster_move_k)", "n")
+
+-- Normal mode: Faster movement for gj and gk (for wrapped lines)
+mapKey("j", "<Plug>(faster_move_gj)", "n")
+mapKey("k", "<Plug>(faster_move_gk)", "n")
+
+-- Visual mode: Faster movement for j and k
+mapKey("j", "<Plug>(faster_vmove_j)", "v")
+mapKey("k", "<Plug>(faster_vmove_k)", "v")
+
+-- Normal mode: Faster movement for arrow keys (Down and Up)
+mapKey("<Down>", "<Plug>(faster_move_j)", "n")
+mapKey("<Up>", "<Plug>(faster_move_k)", "n")
+
+-- Visual mode: Faster movement for arrow keys (Down and Up)
+mapKey("<Down>", "<Plug>(faster_vmove_j)", "v")
+mapKey("<Up>", "<Plug>(faster_vmove_k)", "v")

@@ -17,7 +17,7 @@ opt.smartcase = true -- care when I use capitalization
 
 -- visual
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.termguicolors = true
 opt.signcolumn = "yes" -- vertical line on the left side near number
 
@@ -25,4 +25,4 @@ opt.signcolumn = "yes" -- vertical line on the left side near number
 opt.encoding = "UTF-8"
 opt.cmdheight = 1 -- limit the lines of command
 opt.scrolloff = 10 -- start scrolling to the next part when reach to the n lines from bottom or top
-opt.mouse : append("a")
+opt.mouse:append("a")
