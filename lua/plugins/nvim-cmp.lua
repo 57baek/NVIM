@@ -37,13 +37,31 @@ return {
 					documentation = cmp.config.window.bordered(),
 				},
 
-				mapping = cmp.mapping.preset.insert({
-					["<C-b>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-				}),
+				-- mapping = {
+				--
+				-- 	cmp.mapping.preset.insert({
+				-- 		-- ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+				-- 		-- ["<C-f>"] = cmp.mapping.scroll_docs(4),
+				-- 		["<space>q"] = cmp.mapping.complete(),
+				-- 		-- ["<C-e>"] = cmp.mapping.abort(),
+				-- 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+				-- 	}),
+				--
+				-- 	["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+				-- 	["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+				-- 	["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept selected item
+				-- },
+
+				mapping = {
+					["<C-b>"] = cmp.mapping.scroll_docs(-4), -- Scroll documentation up
+					["<C-f>"] = cmp.mapping.scroll_docs(4), -- Scroll documentation down
+					["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
+					["<C-e>"] = cmp.mapping.abort(), -- Abort completion
+					["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), -- Go to next completion item
+					["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- Go to previous completion item
+					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
+					["<space>v"] = cmp.mapping.complete(), -- Trigger completion with space + q
+				},
 
 				-- autocompletion sources
 				sources = cmp.config.sources({

@@ -15,14 +15,14 @@ return {
 			-- Git push
 			mapKey("<leader>gp", ":Git push origin main<CR>")
 
-			-- Git pull
-			mapKey("<leader>gpl", ":Git pull<CR>")
+			-- -- Git pull
+			-- mapKey("<leader>gpl", ":Git pull<CR>")
 
-			-- Git diff
-			mapKey("<leader>gd", ":Gdiff<CR>")
+			-- -- Git diff
+			-- mapKey("<leader>gd", ":Gdiff<CR>")
 
-			-- Git blame
-			mapKey("<leader>gb", ":Git blame<CR>")
+			-- -- Git blame
+			-- mapKey("<leader>gb", ":Git blame<CR>")
 
 			-- Git add (stage) current file
 			mapKey("<leader>ga", ":Git add %<CR>")

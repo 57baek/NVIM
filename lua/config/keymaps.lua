@@ -4,6 +4,10 @@
 -- Keymap Settings
 local mapKey = require("utils.keyMapper").mapKey
 
+-- Use Leader + C for copying to clipboard in visual mode
+vim.api.nvim_set_keymap("v", "<leader>c", '"+y', { noremap = true, silent = true })
+mapKey("y", '"+y', "v")
+
 -- Function to resize the split
 function ResizeSplit(direction)
 	if direction == "increase" then
@@ -47,9 +51,6 @@ mapKey(">", ">gv", "v")
 --- run current python file with leader+r
 mapKey("<leader>r", ":w<CR>:!python3 %<CR>")
 
--- Use Leader + C for copying to clipboard in visual mode
-vim.api.nvim_set_keymap("v", "<leader>c", '"+y', { noremap = true, silent = true })
-
 -- Function to run current Python file in IPython
 function RunPythonInIPython()
 	local current_file = vim.fn.expand("%:p") -- Get the full path of the current file
@@ -81,3 +82,7 @@ mapKey("<Up>", "<Plug>(faster_move_k)", "n")
 -- Visual mode: Faster movement for arrow keys (Down and Up)
 mapKey("<Down>", "<Plug>(faster_vmove_j)", "v")
 mapKey("<Up>", "<Plug>(faster_vmove_k)", "v")
+
+-- comment the selected words
+mapKey("vf", "<Plug>(comment_toggle_linewise)", "n")
+mapKey("vf", "<Plug>(comment_toggle_linewise_visual)", "x")
