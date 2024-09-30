@@ -43,7 +43,9 @@ return {
 					-- ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
 					-- ["<C-e>"] = cmp.mapping.abort(), -- Abort completion
 					["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), -- Go to next completion item
+					["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), -- Go to next completion item
 					["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- Go to previous completion item
+					["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), -- Go to previous completion item
 					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
 					-- ["<space>v"] = cmp.mapping.complete(), -- Trigger completion with space + q
 				},
