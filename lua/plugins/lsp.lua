@@ -1,4 +1,4 @@
--- LSP, Mason, mason-lspconfig, nvim-lspconfig
+-- LSP, Mason, mason-lscpconfig, nvim-lspconfig
 
 local keyMapper = require("utils.keyMapper").mapKey
 
@@ -46,10 +46,10 @@ return {
 
 			-- setting for lsp
 			keyMapper("K", vim.lsp.buf.hover) -- info about hovering characters
-			keyMapper("gd", vim.lsp.buf.definition) -- go to definitionp
-			keyMapper("<leader>ca", vim.lsp.buf.code_action) -- recommendation
-			keyMapper("<leader>vfr", vim.lsp.buf.references())
-			keyMapper("<leader>vrn", vim.lsp.buf.rename())
+			keyMapper("gd", vim.lsp.buf.definition) -- go to definition
+			keyMapper("<leader>ca", vim.lsp.buf.code_action) -- code action recommendations
+			keyMapper("<leader>fr", vim.lsp.buf.references) -- find references
+			keyMapper("<leader>rn", vim.lsp.buf.rename) -- rename function
 		end,
 	},
 }
