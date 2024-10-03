@@ -48,6 +48,8 @@ return {
 			keyMapper("K", vim.lsp.buf.hover) -- info about hovering characters
 			keyMapper("gd", vim.lsp.buf.definition) -- go to definitionp
 			keyMapper("<leader>ca", vim.lsp.buf.code_action) -- recommendation
+			keyMapper("<leader>vfr", vim.lsp.buf.references())
+			keyMapper("<leader>vrn", vim.lsp.buf.rename())
 		end,
 	},
 }
