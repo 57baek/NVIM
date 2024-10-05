@@ -5,8 +5,8 @@
 local mapKey = require("utils.keyMapper").mapKey
 
 -- Use Leader + C for copying to clipboard in visual mode
-vim.api.nvim_set_keymap("v", "<leader>c", '"+y', { noremap = true, silent = true })
-mapKey("v", "<leader>c", "v")
+mapKey("<leader>c", '"+y', "v")
+
 -- Function to resize the split
 function ResizeSplit(direction)
 	if direction == "increase" then
