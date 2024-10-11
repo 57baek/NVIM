@@ -85,3 +85,6 @@ mapKey("<Up>", "<Plug>(faster_vmove_k)", "v")
 -- comment the selected words
 mapKey("vf", "<Plug>(comment_toggle_linewise)", "n")
 mapKey("vf", "<Plug>(comment_toggle_linewise_visual)", "x")
+
+-- Set up keybinding to toggle Undotree
+mapKey("<leader>u", vim.cmd.UndotreeToggle)
